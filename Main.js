@@ -325,10 +325,13 @@ function showQuestion() {
 function selectOption(selectedIndex) {
   const selectedOption =
     shuffledQuestions[currentQuestionIndex].options[selectedIndex];
-  const currentQuestion = shuffledQuestions[currentQuestionIndex];
-  const questionNumber = currentQuestion.id; // Get the unique identifier
 
-  // Push an object with the question identifier and mark into the array
+  // Add the points earned for this question to the totalPoints
+  totalPoints += selectedOption.points;
+
+  const currentQuestion = shuffledQuestions[currentQuestionIndex];
+  const questionNumber = currentQuestion.id;
+
   questionMarks.push({ question: questionNumber, mark: selectedOption.points });
 
   currentQuestionIndex++;
@@ -339,6 +342,7 @@ function selectOption(selectedIndex) {
     showResult(userName, schoolName, phone, Email, City, questionMarks);
   }
 }
+
 
 function showResult(userName, schoolName, phone, Email, City, questionMarks) {
   questionContainer.style.display = "none";
