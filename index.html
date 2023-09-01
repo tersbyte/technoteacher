@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Questionnaire</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div id="title">Techno Teacher Trivia</div>
+    <br />
+    <div id="question-container">
+      <div id="intro-section" style="display: block">
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+        <br /><br />
+        <label for="school">School:</label>
+        <input type="text" id="school" />
+        <br /><br />
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" />
+        <br /><br />
+        <label for="Email">Email:</label>
+        <input type="text" id="Email" />
+        <br /><br />
+        <label for="City">City:</label>
+        <input type="text" id="City" />
+        <br /><br />
+        <button id="start-btn">Start Quiz</button>
+      </div>
+      <div id="quiz-section" style="display: none">
+        <div id="progress">Question 1 of 20</div>
+        <p id="question"></p>
+        <br />
+        <form id="options-form"></form>
+        <br />
+        <button id="next-btn">Next</button>
+      </div>
+    </div>
+    <div id="result-container" style="display: none">
+      <h1 style="color: violet">Congratulations!</h1>
+      <p id="result"></p>
+      <div id="download-container"></div>
+    </div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+  <script type="module" src="main.js"></script>
+</html>
