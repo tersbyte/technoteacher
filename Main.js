@@ -343,7 +343,6 @@ function selectOption(selectedIndex) {
   }
 }
 
-
 function showResult(userName, schoolName, phone, Email, City, questionMarks) {
   questionContainer.style.display = "none";
   resultContainer.style.display = "block";
@@ -351,7 +350,7 @@ function showResult(userName, schoolName, phone, Email, City, questionMarks) {
 
   if (totalPoints >= 75) {
     result = `Congratulations, You are a Techno-Teacher!`;
-  } else if (totalPoints >= 50) {
+  } else if (totalPoints >= 50 && totalPoints < 75) {
     result = `Great job, You are an upcoming Techno-Teacher.`;
   } else {
     result = `You will receive a participation certificate.`;
@@ -374,6 +373,7 @@ function showResult(userName, schoolName, phone, Email, City, questionMarks) {
     resultText // Pass the resultText instead of questionMarks
   );
 }
+
 
 nextButton.addEventListener("click", () => {
   const selectedOptionIndex = parseInt(
