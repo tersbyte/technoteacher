@@ -327,6 +327,7 @@ function selectOption(selectedIndex) {
     shuffledQuestions[currentQuestionIndex].options[selectedIndex];
 
   // Add the points earned for this question to the totalPoints
+
   totalPoints += selectedOption.points;
 
   const currentQuestion = shuffledQuestions[currentQuestionIndex];
@@ -347,6 +348,7 @@ function showResult(userName, schoolName, phone, Email, City, questionMarks) {
   questionContainer.style.display = "none";
   resultContainer.style.display = "block";
   let result = "";
+  totalPoints=54;
 
   if (totalPoints >= 75) {
     result = `Congratulations, You are a Techno-Teacher!`;
@@ -392,11 +394,35 @@ nextButton.addEventListener("click", () => {
   }
 });
 
+// ... (Previous code)
+
 startButton.addEventListener("click", () => {
   userName = document.getElementById("name").value.trim();
   schoolName = document.getElementById("school").value.trim();
-  phone = document.getElementById("phone").value.trim();
-  Email = document.getElementById("Email").value.trim();
+  // Use regular expressions to validate email and phone number
+  const emailInput = document.getElementById("Email");
+  const phoneInput = document.getElementById("phone");
+
+  // Regular expression for a valid email format
+  const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+
+  // Regular expression for valid phone number (only numbers)
+  const phoneRegex = /^[0-9]+$/;
+
+  // Validate email
+  if (!emailInput.value.match(emailRegex)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Validate phone number
+  if (!phoneInput.value.match(phoneRegex)) {
+    alert("Please enter a valid phone number (only numbers allowed).");
+    return;
+  }
+
+  Email = emailInput.value.trim();
+  phone = phoneInput.value.trim();
   City = document.getElementById("City").value.trim();
 
   if (
@@ -417,6 +443,9 @@ startButton.addEventListener("click", () => {
   // Initialize the questionnaire
   showQuestion();
 });
+
+// ... (Rest of the code)
+
 
 //--------------------------------------------
 function storeUserDataToFirebase(
