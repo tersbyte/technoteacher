@@ -351,11 +351,11 @@ function showResult(userName, schoolName, phone, Email, City, questionMarks) {
   totalPoints=54;
 
   if (totalPoints >= 75) {
-    result = `Congratulations, You are a Techno-Teacher!`;
+    result = `Congratulations! You've officially become a Techno Teacher – your dedication to learning and technology is commendable.`;
   } else if (totalPoints >= 50 && totalPoints < 75) {
-    result = `Great job, You are an upcoming Techno-Teacher.`;
+    result = `Kudos! You're on your way to becoming a Techno Teacher. Keep up the great work in integrating tech into education.`;
   } else {
-    result = `You will receive a participation certificate.`;
+    result = `Congrats! You'll receive a participation certificate for your commitment to the Techno Teacher quiz. Keep exploring the world of tech in education!`;
   }
 
   resultElement.textContent = result;
