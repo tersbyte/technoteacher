@@ -372,7 +372,8 @@ function showResult(userName, schoolName, phone, Email, City, questionMarks) {
     phone,
     Email,
     City,
-    resultText // Pass the resultText instead of questionMarks
+    resultText,
+    totalPoints, // Pass the resultText instead of questionMarks
   );
 }
 
@@ -454,7 +455,8 @@ function storeUserDataToFirebase(
   phone,
   Email,
   City,
-  questionMarks
+  questionMarks,
+  totalPoints,
 ) {
   console.log("Inside store data");
   const d = new Date();
@@ -468,6 +470,7 @@ function storeUserDataToFirebase(
       phoneNumber: phone,
       email: Email,
       city: City,
-      responses: questionMarks, // Store the user's responses with question identifiers
+      responses: questionMarks,
+      total : totalPoints, // Store the user's responses with question identifiers
     });
 }
